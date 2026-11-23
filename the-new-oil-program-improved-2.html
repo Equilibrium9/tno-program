@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0d">
+  <title>The New Oil Program | Affiliate Marketing Blueprint</title>
+  <meta name="description" content="A beginner-friendly introduction to affiliate marketing: learn how to promote digital products online and earn commissions.">
+  <meta name="robots" content="index,follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0b0d;
+      --bg-soft: #111115;
+      --panel: #17171c;
+      --panel-2: #1d1c20;
+      --gold: #d6b45b;
+      --gold-light: #f0d991;
+      --gold-dark: #98752c;
+      --cream: #f6f0e4;
+      --muted: #bdb6a8;
+      --line: rgba(214,180,91,.23);
+      --line-soft: rgba(255,255,255,.09);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --radius: 22px;
+      --shadow: 0 24px 70px rgba(0,0,0,.42);
+      --content: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--cream);
+      font: 16px/1.75 var(--sans);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .22;
+      background:
+        radial-gradient(circle at 82% 8%, rgba(214,180,91,.12), transparent 28rem),
+        radial-gradient(circle at 5% 42%, rgba(214,180,91,.06), transparent 26rem);
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button { font: inherit; }
+    :focus-visible { outline: 3px solid var(--gold-light); outline-offset: 4px; }
+    .wrap { width: min(var(--content), calc(100% - 44px)); margin-inline: auto; }
+    .section { position: relative; padding: clamp(66px, 8vw, 108px) 0; }
+    .section-dark {
+      background: linear-gradient(180deg, rgba(255,255,255,.025), transparent 85%);
+      border-block: 1px solid rgba(214,180,91,.10);
+    }
+    .section-heading { max-width: 760px; margin: 0 auto 42px; text-align: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      margin-bottom: 15px; color: var(--gold-light);
+      font-size: .76rem; font-weight: 700; letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before, .eyebrow::after {
+      content: ""; width: 24px; height: 1px; background: var(--gold-dark);
+    }
+    h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; line-height: 1.16; letter-spacing: -.025em; }
+    h1 { font-size: clamp(2.45rem, 5.6vw, 4.65rem); }
+    h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); }
+    h3 { font-size: 1.45rem; }
+    p { margin: 0 0 17px; }
+    .gold { color: var(--gold-light); }
+    .muted { color: var(--muted); }
+    .lead { max-width: 62ch; margin: 18px auto 0; color: var(--muted); font-size: clamp(1rem, 1.7vw, 1.14rem); }
+    .center { text-align: center; }
+    .small-note { color: #a69e90; font-size: .82rem; line-height: 1.55; }
+
+    /* Notice and navigation */
+    .notice {
+      padding: 9px 16px; text-align: center; color: #f3e7c7;
+      background: linear-gradient(90deg, #211b0e, #3a2d12, #211b0e);
+      border-bottom: 1px solid rgba(214,180,91,.4);
+      font-size: .88rem;
+    }
+    .notice strong { color: var(--gold-light); }
+    .site-header {
+      position: sticky; top: 0; z-index: 40;
+      background: rgba(11,11,13,.88);
+      border-bottom: 1px solid var(--line-soft);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand {
+      display: inline-flex; flex-direction: column; gap: 1px;
+      text-decoration: none; line-height: 1.2;
+      font-family: var(--serif); font-size: 1.1rem; font-weight: 700;
+      white-space: nowrap;
+    }
+    .brand span { color: var(--cream); }
+    .brand b { color: var(--gold-light); font-weight: 700; }
+    .brand small {
+      color: var(--muted); font: 600 .58rem var(--sans);
+      letter-spacing: .2em; text-transform: uppercase;
+    }
+    .nav-links { display: flex; align-items: center; gap: clamp(14px,2vw,28px); list-style: none; margin: 0; padding: 0; }
+    .nav-links a {
+      color: #c8c1b5; text-decoration: none; font-size: .88rem; font-weight: 600;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .menu-toggle {
+      display: none; width: 44px; height: 44px; border: 1px solid var(--line);
+      border-radius: 12px; color: var(--cream); background: var(--panel);
+      cursor: pointer; align-items: center; justify-content: center;
+    }
+    .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after {
+      display: block; width: 18px; height: 2px; border-radius: 2px; background: var(--gold-light);
+      position: relative; transition: transform .2s ease;
+    }
+    .menu-toggle span::before, .menu-toggle span::after { content: ""; position: absolute; left: 0; }
+    .menu-toggle span::before { top: -6px; }
+    .menu-toggle span::after { top: 6px; }
+    .menu-toggle[aria-expanded="true"] span { background: transparent; }
+    .menu-toggle[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 52px; padding: 14px 27px; border: 1px solid rgba(255,239,190,.45);
+      border-radius: 999px; color: #1a1508; text-decoration: none;
+      background: linear-gradient(135deg, #f2dfa1 0%, var(--gold) 58%, #b58c37 100%);
+      box-shadow: 0 12px 34px rgba(214,180,91,.18), inset 0 1px 0 rgba(255,255,255,.55);
+      font-size: .96rem; font-weight: 700; line-height: 1.2;
+      transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+    }
+    .btn:hover { transform: translateY(-3px); filter: brightness(1.06); box-shadow: 0 17px 42px rgba(214,180,91,.29); }
+    .btn:active { transform: translateY(-1px); }
+    .btn.big { min-height: 58px; padding: 17px 34px; font-size: 1.02rem; }
+    .btn.small { min-height: 43px; padding: 10px 18px; font-size: .86rem; }
+    .btn .arrow { font-size: 1.15em; }
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 50px; padding: 12px 22px; border: 1px solid var(--line);
+      border-radius: 999px; color: var(--gold-light); background: rgba(214,180,91,.05);
+      text-decoration: none; font-weight: 700;
+    }
+
+    /* Hero */
+    .hero {
+      padding: clamp(66px,8vw,110px) 0 clamp(76px,9vw,120px);
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 83% 30%, rgba(214,180,91,.16), transparent 34rem),
+        linear-gradient(135deg, #0b0b0d 0%, #111014 62%, #17130b 100%);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: clamp(38px,6vw,82px); align-items: center; }
+    .hero-copy { position: relative; z-index: 2; }
+    .hero h1 { max-width: 760px; margin-bottom: 24px; }
+    .hero h1 em { color: var(--gold-light); font-style: normal; }
+    .hero-copy > p { max-width: 58ch; color: #c7c0b4; font-size: clamp(1.02rem,1.8vw,1.18rem); margin-bottom: 28px; }
+    .hero-cta-row { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .hero-points { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 27px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,.1); border-radius: 999px;
+      color: #d6d0c5; background: rgba(255,255,255,.035); font-size: .79rem;
+    }
+    .hero-visual { position: relative; min-height: 420px; display: grid; place-items: center; }
+    .visual-glow {
+      position: absolute; width: min(440px,100%); aspect-ratio: 1; border-radius: 50%;
+      background: radial-gradient(circle, rgba(214,180,91,.19), rgba(214,180,91,.04) 48%, transparent 70%);
+      filter: blur(5px);
+    }
+    .phone {
+      position: relative; width: min(290px,76%); aspect-ratio: 9/16; padding: 34px 22px 24px;
+      display: flex; flex-direction: column; justify-content: center; gap: 15px;
+      border: 1px solid rgba(240,217,145,.65); border-radius: 39px;
+      background: linear-gradient(155deg, #28251e, #111114 70%);
+      box-shadow: 0 36px 90px rgba(0,0,0,.65), 0 0 0 8px rgba(214,180,91,.055), 0 0 65px rgba(214,180,91,.14);
+    }
+    .phone::before { content: ""; position: absolute; top: 12px; left: 50%; width: 72px; height: 6px; transform: translateX(-50%); border-radius: 9px; background: #050506; }
+    .phone-top { color: var(--muted); text-align: center; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; }
+    .phone-card { padding: 17px 15px; border: 1px solid rgba(214,180,91,.22); border-radius: 15px; background: rgba(255,255,255,.045); }
+    .phone-card small { display: block; color: #bdb5a6; font-size: .74rem; }
+    .phone-card strong { display: block; color: var(--gold-light); font: 600 1.18rem var(--serif); line-height: 1.3; }
+    .phone-arrow { color: var(--gold); text-align: center; line-height: 1; font-size: 1.35rem; }
+    .floating-note {
+      position: absolute; right: -4px; bottom: 52px; max-width: 180px;
+      padding: 13px 16px; border: 1px solid var(--line); border-radius: 15px;
+      background: rgba(23,23,28,.94); box-shadow: var(--shadow);
+      color: var(--muted); font-size: .78rem;
+    }
+    .floating-note strong { display: block; color: var(--gold-light); font: 600 1rem var(--serif); }
+
+    /* Cards and problem section */
+    .cards { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+    .card {
+      position: relative; min-height: 170px; padding: 25px;
+      border: 1px solid var(--line-soft); border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+      box-shadow: 0 14px 38px rgba(0,0,0,.16);
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+    .card:hover { transform: translateY(-5px); border-color: rgba(214,180,91,.52); background: linear-gradient(145deg, rgba(214,180,91,.09), rgba(255,255,255,.02)); }
+    .card-icon {
+      display: grid; place-items: center; width: 43px; height: 43px; margin-bottom: 17px;
+      border: 1px solid var(--line); border-radius: 13px; color: var(--gold-light);
+      background: rgba(214,180,91,.08); font-size: 1.25rem;
+    }
+    .card p { margin: 0; color: #d5cfc3; font-weight: 500; }
+    .closer {
+      max-width: 850px; margin: 36px auto 0; padding: 26px 30px;
+      border: 1px solid rgba(214,180,91,.4); border-radius: var(--radius);
+      background: linear-gradient(110deg, rgba(214,180,91,.11), rgba(214,180,91,.025));
+      color: var(--gold-light); text-align: center; font: 600 clamp(1.2rem,2.5vw,1.65rem)/1.45 var(--serif);
+    }
+
+    /* Proof gallery */
+    .gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; margin-top: 35px; }
+    .gallery.single { grid-template-columns: minmax(0,760px); justify-content: center; }
+    .shot {
+      position: relative; display: block; width: 100%; aspect-ratio: 4/5; overflow: hidden;
+      padding: 0; border: 1px solid var(--line); border-radius: 18px;
+      background: var(--panel); color: var(--cream); cursor: zoom-in;
+    }
+    .shot.wide { aspect-ratio: 16/9; }
+    .shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
+    .shot:hover img { transform: scale(1.045); }
+    .shot .zoom {
+      position: absolute; right: 12px; bottom: 12px; padding: 7px 12px;
+      border: 1px solid rgba(240,217,145,.5); border-radius: 999px;
+      background: rgba(0,0,0,.72); color: #fff; font-size: .78rem;
+    }
+    .placeholder {
+      display: none; position: absolute; inset: 0; align-items: center; justify-content: center;
+      padding: 22px; color: var(--muted); text-align: center; background: var(--panel);
+    }
+    img.broken { display: none; }
+    img.broken + .placeholder { display: flex; }
+    .proof-note { max-width: 760px; margin: 20px auto 0; color: var(--muted); font-size: .86rem; text-align: center; }
+
+    /* Imagination section */
+    .imagine-section {
+      background:
+        radial-gradient(ellipse at 18% 10%, rgba(214,180,91,.12), transparent 36rem),
+        linear-gradient(135deg,#151419,#0e0e11);
+      border-block: 1px solid rgba(214,180,91,.12);
+    }
+    .imagine-box { max-width: 850px; margin: auto; padding-left: clamp(20px,4vw,44px); border-left: 3px solid var(--gold); }
+    .imagine-box h2 { margin-bottom: 25px; }
+    .imagine-box > p { color: #ddd6c9; font: 500 clamp(1.08rem,2vw,1.35rem)/1.75 var(--serif); }
+    .oil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 30px 0; }
+    .oil-item { padding: 23px; border: 1px solid rgba(214,180,91,.36); border-radius: 17px; background: rgba(0,0,0,.22); color: #d8d0c2; }
+    .oil-item strong { display: block; margin-bottom: 5px; color: var(--gold-light); font: 600 1.4rem var(--serif); }
+
+    /* Story and facilitator */
+    .story-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(32px,5vw,64px); align-items: start; }
+    .portrait-frame {
+      position: relative; overflow: hidden; aspect-ratio: 4/5;
+      border: 1px solid var(--line); border-radius: 22px; background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .portrait-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .portrait-caption {
+      position: absolute; inset: auto 0 0; padding: 28px 18px 17px;
+      background: linear-gradient(transparent,rgba(0,0,0,.86)); color: #fff;
+      font: 600 1.05rem var(--serif);
+    }
+    .story-copy h2 { margin-bottom: 22px; }
+    .story-copy p { color: #d2ccbf; }
+    .story-highlight {
+      margin: 26px 0; padding: 17px 20px; border-left: 3px solid var(--gold);
+      background: rgba(214,180,91,.07); color: var(--gold-light);
+      font: 600 1.28rem/1.5 var(--serif);
+    }
+    .story-points { display: grid; gap: 10px; margin: 22px 0; }
+    .story-point { display: flex; gap: 11px; color: #d7d0c4; }
+    .story-point span { color: var(--gold-light); font-weight: 700; }
+    .facilitator-card {
+      display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(25px,4vw,48px);
+      align-items: center; padding: clamp(22px,4vw,46px);
+      border: 1px solid rgba(214,180,91,.38); border-radius: 28px;
+      background: linear-gradient(145deg,#1b1a1d,#111114 72%);
+      box-shadow: var(--shadow);
+    }
+    .facilitator-card .portrait-frame { max-width: 320px; }
+    .facilitator-card h3 { font-size: clamp(1.55rem,3vw,2.15rem); }
+    .role { margin: 10px 0 20px; color: var(--gold-light); font-size: .91rem; font-weight: 700; }
+    .facilitator-card p { color: #d2ccbf; }
+    blockquote { margin: 23px 0 0; padding: 4px 0 4px 18px; border-left: 3px solid var(--gold); color: var(--gold-light); font: 600 1.2rem/1.5 var(--serif); }
+
+    /* CTA band */
+    .cta-band {
+      padding: 76px 0; text-align: center;
+      background: radial-gradient(ellipse at 50% 100%,rgba(214,180,91,.16),transparent 60%),#111014;
+      border-block: 1px solid rgba(214,180,91,.14);
+    }
+    .cta-band h2 { margin-bottom: 12px; }
+    .cta-band .lead { margin-bottom: 27px; }
+
+    /* Videos */
+    .videos { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; margin-top: 30px; }
+    .video-card { min-width: 0; }
+    .video-frame {
+      position: relative; aspect-ratio: 16/9; overflow: hidden;
+      border: 1px solid var(--line); border-radius: 18px; background: #050505;
+    }
+    .video-frame img, .video-frame iframe { width: 100%; height: 100%; object-fit: cover; border: 0; }
+    .play {
+      position: absolute; inset: 0; display: grid; place-items: center;
+      width: 100%; border: 0; color: #211908; background: rgba(0,0,0,.28); cursor: pointer;
+    }
+    .play span {
+      display: grid; place-items: center; width: 68px; height: 68px; padding-left: 4px;
+      border: 1px solid rgba(255,255,255,.55); border-radius: 50%;
+      background: linear-gradient(135deg,var(--gold-light),var(--gold-dark));
+      box-shadow: 0 0 0 9px rgba(214,180,91,.16); font-size: 1.45rem;
+      transition: transform .2s ease;
+    }
+    .play:hover span { transform: scale(1.09); }
+    .video-caption { margin-top: 11px; color: var(--muted); font-size: .9rem; }
+
+    /* Disclaimer and footer */
+    .disclaimer {
+      max-width: 850px; margin: auto; padding: clamp(24px,4vw,38px);
+      border: 1px solid rgba(191,103,83,.42); border-radius: 22px;
+      background: linear-gradient(135deg,rgba(115,48,38,.16),rgba(255,255,255,.018));
+    }
+    .disclaimer h2 { margin-bottom: 15px; font-size: 1.65rem; }
+    .disclaimer p, .disclaimer li { color: #c9c1b5; }
+    .disclaimer ul { margin: 12px 0 16px; padding-left: 22px; }
+    .disclaimer li { margin-bottom: 8px; }
+    .final-section {
+      padding: clamp(85px,10vw,130px) 0; text-align: center;
+      background: radial-gradient(ellipse at 50% 100%,rgba(214,180,91,.2),transparent 58%),var(--bg);
+    }
+    .final-section h2 { max-width: 760px; margin: 0 auto; }
+    .final-section .lead { margin: 20px auto 30px; }
+    footer { padding: 35px 0 95px; border-top: 1px solid var(--line-soft); text-align: center; color: #9f988b; font-size: .84rem; }
+    footer .brand { align-items: center; margin-bottom: 12px; }
+    footer .footer-note { max-width: 760px; margin: 0 auto; }
+
+    /* Sticky mobile CTA */
+    .sticky-cta {
+      position: fixed; left: 14px; right: 14px; bottom: max(12px, env(safe-area-inset-bottom));
+      z-index: 35; display: none; opacity: 0; pointer-events: none;
+      transform: translateY(18px); transition: opacity .25s ease, transform .25s ease;
+    }
+    .sticky-cta.visible { opacity: 1; pointer-events: auto; transform: none; }
+    .sticky-cta .btn { width: 100%; box-shadow: 0 10px 35px rgba(0,0,0,.45),0 8px 24px rgba(214,180,91,.18); }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center;
+      padding: 24px; background: rgba(0,0,0,.94);
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: min(100%,1100px); max-height: 86vh; object-fit: contain; border: 1px solid var(--line); border-radius: 12px; }
+    .lightbox button {
+      position: absolute; display: grid; place-items: center; width: 46px; height: 46px;
+      border: 1px solid var(--line); border-radius: 50%; color: #fff;
+      background: rgba(255,255,255,.09); cursor: pointer; font-size: 1.3rem;
+    }
+    .lightbox-close { top: 16px; right: 16px; }
+    .lightbox-prev { left: 14px; top: 50%; }
+    .lightbox-next { right: 14px; top: 50%; }
+
+    /* Scroll reveal: content remains visible if JS is unavailable */
+    .reveal { opacity: 1; transform: none; }
+    .js-ready .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .js-ready .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      .js-ready .reveal { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: .8rem; }
+      .hero-grid { gap: 28px; }
+      .cards { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+    @media (max-width: 760px) {
+      html { scroll-padding-top: 78px; }
+      .wrap { width: min(var(--content), calc(100% - 34px)); }
+      .nav { min-height: 68px; }
+      .nav-links {
+        position: absolute; top: calc(100% + 1px); left: 0; right: 0;
+        display: none; flex-direction: column; align-items: stretch; gap: 0;
+        padding: 10px 18px 18px; border-bottom: 1px solid var(--line);
+        background: rgba(11,11,13,.98); box-shadow: 0 18px 30px rgba(0,0,0,.35);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { display: block; padding: 12px 4px; font-size: .95rem; }
+      .nav-actions > .btn { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .hero { padding-top: 55px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 340px; grid-row: 1; }
+      .phone { width: 215px; }
+      .floating-note { right: 0; bottom: 30px; }
+      .story-grid, .facilitator-card { grid-template-columns: 1fr; }
+      .story-photo { max-width: 340px; margin: 0 auto; }
+      .facilitator-card .portrait-frame { max-width: 300px; }
+      .gallery { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .videos { grid-template-columns: 1fr; }
+      .sticky-cta { display: block; }
+      footer { padding-bottom: 110px; }
+    }
+    @media (max-width: 520px) {
+      body { font-size: 15.5px; }
+      .notice { font-size: .79rem; }
+      .brand { font-size: 1rem; }
+      .hero h1 { font-size: clamp(2.25rem,11vw,3.15rem); }
+      .hero-copy > p { font-size: 1rem; }
+      .hero-cta-row { align-items: stretch; }
+      .hero-cta-row .btn { width: 100%; }
+      .hero-visual { min-height: 315px; }
+      .phone { width: 195px; }
+      .floating-note { max-width: 145px; right: -3px; bottom: 20px; font-size: .7rem; }
+      .cards { grid-template-columns: 1fr; gap: 13px; }
+      .card { min-height: auto; padding: 21px; }
+      .gallery { grid-template-columns: 1fr 1fr; gap: 11px; }
+      .shot { border-radius: 13px; }
+      .shot.wide { aspect-ratio: 4/3; }
+      .oil-grid { grid-template-columns: 1fr; }
+      .imagine-box { padding-left: 17px; }
+      .closer { padding: 22px 18px; }
+      .lightbox { padding: 14px; }
+      .lightbox-prev { left: 8px; }
+      .lightbox-next { right: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Update the single URL below if your registration destination changes. -->
+  <script>const RESERVE_URL = "https://t.me/m/d5Kb_0C7NzE0";</script>
+
+  <div class="notice" role="note"><strong>Please read to the end</strong> before you click any button.</div>
+
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="The New Oil Program home">
+        <span>The New Oil <b>Program</b></span>
+        <small>Affiliate Marketing Blueprint</small>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#familiar">Does this sound familiar?</a></li>
+        <li><a href="#story">My story</a></li>
+        <li><a href="#facilitator">Your facilitator</a></li>
+        <li><a href="#proof">Testimonials</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="btn small js-reserve" href="#" target="_blank" rel="noopener noreferrer">Reserve your seat <span class="arrow">↗</span></a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- 1. HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">The New Oil Program</div>
+          <h1>Imagine making <em>$100–$200</em> monthly with your smartphone — without running under the hot sun.</h1>
+          <p>Learn beginner-friendly strategies for promoting digital products to people who need them and earning commissions when they buy. The training is explained in simple language, even if you are completely new to online business.</p>
+          <div class="hero-cta-row">
+            <a class="btn big js-reserve" href="#" target="_blank" rel="noopener noreferrer">Reserve your seat <span class="arrow">→</span></a>
+            <a class="btn-outline" href="#familiar">Explore the training</a>
+          </div>
+          <p class="small-note" style="margin:15px 0 0">The income figure is an illustrative target, not a promise or guarantee. Results vary based on effort, skill, market conditions and other factors.</p>
+          <div class="hero-points">
+            <span class="chip">📱 Smartphone-friendly</span>
+            <span class="chip">🙋 Complete beginners welcome</span>
+            <span class="chip">🎓 Practical training</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Illustration showing the affiliate marketing process">
+          <div class="visual-glow"></div>
+          <div class="phone">
+            <div class="phone-top">A simple online business model</div>
+            <div class="phone-card"><small>The internet is the</small><strong>New oil field</strong></div>
+            <div class="phone-arrow">↓</div>
+            <div class="phone-card"><small>Affiliate marketing is the</small><strong>Drill</strong></div>
+            <div class="phone-arrow">↓</div>
+            <div class="phone-card"><small>You learn to</small><strong>Promote &amp; earn commission</strong></div>
+          </div>
+          <div class="floating-note"><strong>Learn the skill.</strong>Understand the process. Practise consistently.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PROBLEM IDENTIFICATION -->
+    <section id="familiar" class="section section-dark">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Does this sound familiar?</div>
+          <h2>Sometimes, the hardest part is simply knowing <span class="gold">where to start.</span></h2>
+          <p class="lead">If any of these situations feels familiar, you are not alone.</p>
+        </div>
+        <div class="cards">
+          <article class="card reveal"><span class="card-icon">↗</span><p>Working hard but still struggling to make ends meet.</p></article>
+          <article class="card reveal"><span class="card-icon">＋</span><p>Looking for an extra source of income to support your needs.</p></article>
+          <article class="card reveal"><span class="card-icon">🎓</span><p>A student trying to support yourself while studying.</p></article>
+          <article class="card reveal"><span class="card-icon">⌕</span><p>Unemployed and searching for practical opportunities.</p></article>
+          <article class="card reveal"><span class="card-icon">!</span><p>Tired of hearing about “easy money” schemes that never explain the real work.</p></article>
+          <article class="card reveal"><span class="card-icon">?</span><p>Wondering whether it is possible to build something legitimate online.</p></article>
+        </div>
+        <div class="closer reveal">If that sounds familiar, this training was created to help you understand one possible place to begin.</div>
+      </div>
+    </section>
+
+    <!-- 3. SOCIAL PROOF -->
+    <section class="section" id="social">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div class="eyebrow">A look at the journey</div>
+          <h2>See examples of people <span class="gold">making progress online.</span></h2>
+          <p class="lead">Explore the proof shared on the original page. Take time to look through it and understand the context of each result.</p>
+        </div>
+        <div class="gallery single">
+          <button class="shot wide reveal" data-lightbox type="button" aria-label="View online results image">
+            <img src="https://earnwiththescienticmarketer.carrd.co/assets/images/image01.jpg?v=650137d0" alt="Online marketing results shared on the original page" loading="lazy">
+            <span class="placeholder">Proof image unavailable. Replace this image URL with the original file.</span>
+            <span class="zoom">⌕ View image</span>
+          </button>
+        </div>
+        <p class="proof-note">Examples and testimonials are individual experiences. They should not be understood as typical or guaranteed results.</p>
+      </div>
+    </section>
+
+    <!-- 4. EMOTIONAL CONNECTION -->
+    <section class="section imagine-section">
+      <div class="wrap">
+        <div class="imagine-box reveal">
+          <div class="eyebrow">Imagine this</div>
+          <h2>What if your phone could become more than a way to scroll?</h2>
+          <p>Imagine waking up tomorrow and checking your phone. Not just for messages or notifications, but to see that a customer has purchased a product through your recommendation.</p>
+          <p>For many people, learning how to earn through the internet starts with understanding a simple business model and developing the skills to use it.</p>
+          <div class="oil-grid">
+            <div class="oil-item"><strong>The internet</strong>is the new oil field.</div>
+            <div class="oil-item"><strong>Affiliate marketing</strong>is the drill.</div>
+          </div>
+          <p>You do not need to expect overnight success. You need to understand the process, learn how to reach the right people, practise and improve.</p>
+          <p class="gold"><strong>That is the idea behind The New Oil Program.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. PERSONAL STORY -->
+    <section class="section" id="story">
+      <div class="wrap story-grid">
+        <div class="story-photo reveal">
+          <div class="portrait-frame">
+            <img src="https://earnwiththescienticmarketer.carrd.co/assets/images/gallery01/ebeffd42.jpg?v=650137d0" alt="NYAMEBA, TheScientificMarketer" loading="lazy">
+            <span class="placeholder">Facilitator photo unavailable. Replace this image URL with your portrait.</span>
+            <div class="portrait-caption">NYAMEBA | TheScientificMarketer</div>
+          </div>
+        </div>
+        <div class="story-copy reveal">
+          <div class="eyebrow">A little about my journey</div>
+          <h2>My story: I know what it feels like to <span class="gold">start with very little.</span></h2>
+          <p>When I started exploring online business, I was a student with big hopes but very limited resources. Even buying internet data was sometimes a challenge.</p>
+          <p>There were days I worked on the farm, weeding from morning until evening. I had to find ways to manage basic needs while still trying to learn a skill that could create another opportunity for me.</p>
+          <p>I borrowed money at a point to sort out food, data and the training I needed to learn affiliate marketing. It was not a smooth journey, and I had to make sacrifices to keep learning.</p>
+          <div class="story-highlight">My first major milestone was earning GH₵2,000 online.</div>
+          <p>That experience changed how I looked at the internet. I began to understand that a smartphone could be more than a device for entertainment when you learn how to use it to solve problems and connect products with people who need them.</p>
+          <p>Within my first three months in online marketing, I generated over $800. Since then, I have continued learning, practising and helping other beginners understand the process.</p>
+          <p>I share this because I know what it feels like to want to do something for yourself but not know where to begin. My aim is to make the learning process clearer and more practical for people starting out.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. MID-PAGE CTA -->
+    <section class="cta-band">
+      <div class="wrap reveal">
+        <div class="eyebrow">Your next step</div>
+        <h2>Ready to understand how affiliate marketing works?</h2>
+        <p class="lead">Reserve your seat and get the details about the training.</p>
+        <a class="btn big js-reserve" href="#" target="_blank" rel="noopener noreferrer">Reserve your seat <span class="arrow">→</span></a>
+      </div>
+    </section>
+
+    <!-- 7. FACILITATOR -->
+    <section class="section" id="facilitator">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Your facilitator</div>
+          <h2>Meet <span class="gold">TheScientificMarketer.</span></h2>
+        </div>
+        <div class="facilitator-card reveal">
+          <div class="portrait-frame">
+            <img src="https://earnwiththescienticmarketer.carrd.co/assets/images/gallery01/ebeffd42.jpg?v=650137d0" alt="NYAMEBA, TheScientificMarketer" loading="lazy">
+            <span class="placeholder">Facilitator photo unavailable. Replace this image URL with your portrait.</span>
+          </div>
+          <div>
+            <h3>NYAMEBA | TheScientificMarketer</h3>
+            <div class="role">Online Marketing Strategist &amp; Skills Trainer</div>
+            <p>I have been actively involved in online marketing for almost a year, learning, testing strategies and applying what I teach.</p>
+            <p>My approach is practical: identify a problem, investigate it, test possible solutions and share what works. I am passionate about helping young people understand digital skills that can create income opportunities.</p>
+            <p>In this training, my goal is to explain affiliate marketing in simple language, help you understand the process and show you the steps involved in getting started.</p>
+            <blockquote>“I believe a skill becomes valuable when you learn how to apply it to solve a real problem.”</blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. WHO IT IS FOR -->
+    <section class="section section-dark" id="who">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Is this for you?</div>
+          <h2>Who this training <span class="gold">is designed for.</span></h2>
+          <p class="lead">You do not need to be an expert before you begin. You do need to be willing to learn and practise.</p>
+        </div>
+        <div class="cards">
+          <article class="card reveal"><span class="card-icon">🎓</span><p>You are a student who wants to learn a skill while studying.</p></article>
+          <article class="card reveal"><span class="card-icon">💼</span><p>You work a 9-to-5 job and want to explore an additional income stream.</p></article>
+          <article class="card reveal"><span class="card-icon">⌂</span><p>You are a parent looking for a flexible skill to learn around family responsibilities.</p></article>
+          <article class="card reveal"><span class="card-icon">🙋</span><p>You are a complete beginner with no previous affiliate marketing experience.</p></article>
+          <article class="card reveal"><span class="card-icon">◎</span><p>You are willing to take action, practise and improve instead of expecting instant results.</p></article>
+          <article class="card reveal"><span class="card-icon">📱</span><p>You have access to a smartphone and the internet and want to learn how to use them productively.</p></article>
+        </div>
+        <div class="center reveal" style="margin-top:38px">
+          <a class="btn big js-reserve" href="#" target="_blank" rel="noopener noreferrer">Reserve your seat <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. TESTIMONIALS -->
+    <section class="section" id="proof">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Shared experiences</div>
+          <h2>Real testimonials</h2>
+          <p class="lead">Read and watch the experiences shared on the original page. Individual results differ, and no particular result is guaranteed.</p>
+        </div>
+        <div class="gallery">
+          <button class="shot reveal" data-lightbox type="button" aria-label="View testimonial image one">
+            <img src="https://earnwiththescienticmarketer.carrd.co/assets/images/image05.jpg?v=650137d0" alt="Testimonial one" loading="lazy">
+            <span class="placeholder">Testimonial image unavailable. Replace this image URL.</span>
+            <span class="zoom">⌕ View</span>
+          </button>
+          <button class="shot reveal" data-lightbox type="button" aria-label="View testimonial image two">
+            <img src="https://earnwiththescienticmarketer.carrd.co/assets/images/image06.jpg?v=650137d0" alt="Testimonial two" loading="lazy">
+            <span class="placeholder">Testimonial image unavailable. Replace this image URL.</span>
+            <span class="zoom">⌕ View</span>
+          </button>
+        </div>
+        <div class="videos">
+          <div class="video-card reveal">
+            <div class="video-frame" data-youtube="rMDSOPahaWQ">
+              <img src="https://i.ytimg.com/vi/rMDSOPahaWQ/hqdefault.jpg" alt="Video testimonial preview" loading="lazy">
+              <button class="play" type="button" aria-label="Play video testimonial"><span>▶</span></button>
+            </div>
+            <p class="video-caption">Watch a video shared as part of the original page.</p>
+          </div>
+          <div class="video-card reveal">
+            <div class="video-frame" data-youtube="pS1ic8u_BCg">
+              <img src="https://i.ytimg.com/vi/pS1ic8u_BCg/hqdefault.jpg" alt="Video explanation preview" loading="lazy">
+              <button class="play" type="button" aria-label="Play video explanation"><span>▶</span></button>
+            </div>
+            <p class="video-caption">Watch a simple explanation from one of my colleagues.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FINAL DISCLAIMER -->
+    <section class="section section-dark">
+      <div class="wrap">
+        <div class="disclaimer reveal">
+          <h2>⚠️ Before you reserve</h2>
+          <p>This training is for people who are genuinely interested in learning a skill and understanding how affiliate marketing works.</p>
+          <p>Please take a moment to consider the following:</p>
+          <ul>
+            <li>Affiliate marketing requires learning, consistent effort, patience and practice. It is not a guaranteed or instant-income system.</li>
+            <li>Some tools, platforms or account features may involve additional costs. Ask for clear details about any costs before making a decision.</li>
+            <li>Only proceed when you understand the training, its terms and what is expected of you.</li>
+          </ul>
+          <p>If you are ready to learn, ask questions and put the work into developing a skill, you are welcome.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. FINAL CTA -->
+    <section class="final-section" id="final">
+      <div class="wrap reveal">
+        <div class="eyebrow">Take the first step</div>
+        <h2>Your first step starts with <span class="gold">understanding the opportunity.</span></h2>
+        <p class="lead">Learn the basics of affiliate marketing and find out whether this is a skill you want to develop.</p>
+        <a class="btn big js-reserve" href="#" target="_blank" rel="noopener noreferrer">Reserve your seat <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a class="brand" href="#top"><span>NYAMEBA | <b>TheScientificMarketer</b></span><small>Online Marketing Strategist</small></a>
+      <p class="footer-note">The New Oil Program is an educational training opportunity about affiliate marketing. Results depend on individual effort, skills, market conditions and other factors; income is not guaranteed.</p>
+    </div>
+  </footer>
+
+  <div class="sticky-cta" id="stickyCta">
+    <a class="btn js-reserve" href="#" target="_blank" rel="noopener noreferrer">Reserve your seat <span class="arrow">→</span></a>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close image viewer">×</button>
+    <button class="lightbox-prev" type="button" aria-label="Previous image">‹</button>
+    <img src="" alt="">
+    <button class="lightbox-next" type="button" aria-label="Next image">›</button>
+  </div>
+
+  <script>
+    document.documentElement.classList.add("js-ready");
+
+    // One central reservation destination powers every CTA.
+    document.querySelectorAll(".js-reserve").forEach(link => {
+      link.href = RESERVE_URL;
+    });
+
+    // Mobile navigation.
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    function closeMenu() {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation menu");
+    }
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
+      navLinks.classList.toggle("open", !isOpen);
+    });
+    navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+    document.addEventListener("keydown", event => { if (event.key === "Escape") closeMenu(); });
+
+    // Scroll reveal with a safe fallback for browsers without IntersectionObserver.
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach(item => revealObserver.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add("in-view"));
+    }
+
+    // Sticky CTA appears after the hero and disappears near the final CTA.
+    const stickyCta = document.getElementById("stickyCta");
+    const hero = document.querySelector(".hero");
+    const finalSection = document.getElementById("final");
+    if ("IntersectionObserver" in window) {
+      let heroPassed = false;
+      let finalVisible = false;
+      const updateSticky = () => stickyCta.classList.toggle("visible", heroPassed && !finalVisible);
+      new IntersectionObserver(entries => {
+        heroPassed = !entries[0].isIntersecting;
+        updateSticky();
+      }).observe(hero);
+      new IntersectionObserver(entries => {
+        finalVisible = entries[0].isIntersecting;
+        updateSticky();
+      }).observe(finalSection);
+    }
+
+    // Lazy-load YouTube embeds only after the visitor chooses to play.
+    document.querySelectorAll("[data-youtube]").forEach(frame => {
+      const playButton = frame.querySelector(".play");
+      playButton.addEventListener("click", () => {
+        const videoId = frame.dataset.youtube;
+        const iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(videoId) + "?autoplay=1&rel=0";
+        iframe.title = "Affiliate marketing testimonial video";
+        iframe.loading = "lazy";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+        frame.replaceChildren(iframe);
+      });
+    });
+
+    // Accessible image lightbox with previous/next controls.
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+    const lightboxButtons = lightbox.querySelectorAll("button");
+    const galleryButtons = [...document.querySelectorAll("[data-lightbox]")].filter(button => {
+      const image = button.querySelector("img");
+      return image && !image.classList.contains("broken");
+    });
+    let currentImage = 0;
+    let previousFocus = null;
+
+    function showImage(index) {
+      if (!galleryButtons.length) return;
+      currentImage = (index + galleryButtons.length) % galleryButtons.length;
+      const image = galleryButtons[currentImage].querySelector("img");
+      lightboxImage.src = image.currentSrc || image.src;
+      lightboxImage.alt = image.alt || "Expanded gallery image";
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      lightbox.querySelector(".lightbox-close").focus();
+    }
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.src = "";
+      document.body.style.overflow = "";
+      if (previousFocus) previousFocus.focus();
+    }
+    galleryButtons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        previousFocus = button;
+        showImage(index);
+      });
+    });
+    lightbox.querySelector(".lightbox-close").addEventListener("click", closeLightbox);
+    lightbox.querySelector(".lightbox-prev").addEventListener("click", () => showImage(currentImage - 1));
+    lightbox.querySelector(".lightbox-next").addEventListener("click", () => showImage(currentImage + 1));
+    lightbox.addEventListener("click", event => { if (event.target === lightbox) closeLightbox(); });
+    document.addEventListener("keydown", event => {
+      if (!lightbox.classList.contains("open")) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") showImage(currentImage - 1);
+      if (event.key === "ArrowRight") showImage(currentImage + 1);
+      if (event.key === "Tab") {
+        const focusable = [...lightboxButtons];
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    });
+  </script>
+</body>
+</html>
